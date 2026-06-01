@@ -1,9 +1,15 @@
-﻿using DiscordRPC;
+using DiscordRPC;
 var now = DateTime.Now;
 var midnightLocal = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0, DateTimeKind.Local);
 
-Console.WriteLine("Choose your flag shown: 1 - lesbian, 2 - trans, anything else - legtq");
-string input = Console.ReadLine();
+string input = args.Length > 0 ? args[0] : null;
+
+if (input == null)
+{
+    Console.WriteLine("Choose flag: 1 - lesbian, 2 - trans, other - lgbtq");
+    input = Console.ReadLine();
+}
+
 string pic = "";
 string pictext = "";
 
